@@ -1,0 +1,3 @@
+PASS: LDAP role mapping for john.doe
+PASS: LDAP role mapping for jane.smith
+PASS: OTP is REQUIRED in live password flow

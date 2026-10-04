@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram name="C4 &#x2014; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x43A;&#x43E;&#x43D;&#x442;&#x443;&#x440;">
+    <mxGraphModel grid="1" page="1" pageWidth="1800" pageHeight="1150">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="buyer" value="&#x41F;&#x43E;&#x43A;&#x443;&#x43F;&#x430;&#x442;&#x435;&#x43B;&#x44C; &#x43F;&#x440;&#x43E;&#x442;&#x435;&#x437;&#x430; [Person]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#d5e8d4;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="shop" value="&#x418;&#x43D;&#x442;&#x435;&#x440;&#x43D;&#x435;&#x442;-&#x43C;&#x430;&#x433;&#x430;&#x437;&#x438;&#x43D; [Container: &#x411;&#x438;&#x442;&#x440;&#x438;&#x43A;&#x441;24]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="crm" value="CRM [Container: &#x411;&#x438;&#x442;&#x440;&#x438;&#x43A;&#x441;24]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="40" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="operator" value="&#x41E;&#x43F;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440; &#x43F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x430; [Person]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#d5e8d4;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="40" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="pilot" value="&#x41F;&#x438;&#x43B;&#x43E;&#x442; &#x43F;&#x440;&#x43E;&#x442;&#x435;&#x437;&#x430; [Person]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#d5e8d4;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="chip" value="&#x41F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x430; &#x447;&#x438;&#x43F;&#x430; [Software system: C++] &#x41C;&#x438;&#x43E;&#x441;&#x438;&#x433;&#x43D;&#x430;&#x43B;&#x44B; &#x2192; &#x434;&#x432;&#x438;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x41A;&#x43E;&#x43D;&#x442;&#x443;&#x440; &#x440;&#x435;&#x430;&#x43A;&#x446;&#x438;&#x438; &#x434;&#x43E; 100 &#x43C;&#x441;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="api" value="API [Container] &#x41F;&#x440;&#x438;&#x451;&#x43C; &#x442;&#x435;&#x43B;&#x435;&#x43C;&#x435;&#x442;&#x440;&#x438;&#x438;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="380" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="&#x411;&#x430;&#x437;&#x430; &#x442;&#x435;&#x43B;&#x435;&#x43C;&#x435;&#x442;&#x440;&#x438;&#x438; [Container: PostgreSQL]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="380" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="app" value="&#x414;&#x43E;&#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43F;&#x440;&#x43E;&#x442;&#x435;&#x437;&#x430; [Container: Android/iOS] &#x41E;&#x442;&#x447;&#x451;&#x442;&#x44B; &#x2192; &#x43D;&#x43E;&#x432;&#x44B;&#x439; BFF" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="730" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="ml" value="ML-&#x438;&#x43D;&#x436;&#x435;&#x43D;&#x435;&#x440; [Person]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#d5e8d4;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="730" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="cli" value="CLI [Container] &#x41E;&#x431;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x435;&#x439;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="730" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="crmdb" value="CRM DB [Container: PostgreSQL &#x432; &#x443;&#x447;&#x435;&#x431;&#x43D;&#x43E;&#x43C; &#x441;&#x442;&#x435;&#x43D;&#x434;&#x435;]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="220" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="e0" value="&#x417;&#x430;&#x43A;&#x430;&#x437; &#x438; &#x43E;&#x43F;&#x43B;&#x430;&#x442;&#x430;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="buyer" target="shop">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="&#x417;&#x430;&#x43A;&#x430;&#x437;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="shop" target="crm">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="&#x41F;&#x440;&#x43E;&#x438;&#x437;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="operator" target="crm">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="crm" target="crmdb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="&#x41C;&#x438;&#x43E;&#x441;&#x438;&#x433;&#x43D;&#x430;&#x43B;&#x44B;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="pilot" target="chip">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="pilot" target="app">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="&#x41A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x44B;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="app" target="chip">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="4G / &#x442;&#x435;&#x43B;&#x435;&#x43C;&#x435;&#x442;&#x440;&#x438;&#x44F;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="chip" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="app" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="&#x417;&#x430;&#x43F;&#x438;&#x441;&#x44C;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="api" target="db">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="&#x417;&#x430;&#x43F;&#x443;&#x441;&#x43A;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="ml" target="cli">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="&#x427;&#x442;&#x435;&#x43D;&#x438;&#x435;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="cli" target="db">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="C4 &#x2014; &#x432;&#x445;&#x43E;&#x434; &#x432; &#x440;&#x435;&#x433;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C; &#x43A;&#x43E;&#x43D;&#x442;&#x443;&#x440;&#x435;">
+    <mxGraphModel grid="1" page="1" pageWidth="1800" pageHeight="1150">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="user" value="&#x41F;&#x438;&#x43B;&#x43E;&#x442; &#x43F;&#x440;&#x43E;&#x442;&#x435;&#x437;&#x430; [Person]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#d5e8d4;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="ui" value="&#x418;&#x43D;&#x442;&#x435;&#x440;&#x444;&#x435;&#x439;&#x441; &#x43E;&#x442;&#x447;&#x451;&#x442;&#x43E;&#x432; [Container: React] &#x41D;&#x435;&#x442; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x43E;&#x432; IdP" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="auth" value="bionicpro-auth [Container: Python] PKCE S256, state, nonce &#x421;&#x435;&#x441;&#x441;&#x438;&#x438; &#x438; CSRF" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc" value="&#x420;&#x435;&#x433;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; Keycloak [Container] Access token 120 &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434; &#x41E;&#x431;&#x44F;&#x437;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; OTP" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="410" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="ldap" value="&#x41B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43A;&#x430;&#x442;&#x430;&#x43B;&#x43E;&#x433; [External: OpenLDAP] &#x41F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x438; &#x438; &#x440;&#x43E;&#x43B;&#x438; &#x422;&#x43E;&#x439; &#x436;&#x435; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x44B;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#f5f5f5;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="410" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="idp" value="&#x420;&#x430;&#x437;&#x440;&#x435;&#x448;&#x451;&#x43D;&#x43D;&#x44B;&#x439; &#x43C;&#x435;&#x441;&#x442;&#x43D;&#x44B;&#x439; IdP [External] &#x42F;&#x43D;&#x434;&#x435;&#x43A;&#x441; ID &#x434;&#x43B;&#x44F; &#x420;&#x424;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#f5f5f5;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="410" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="sess" value="&#x421;&#x435;&#x441;&#x441;&#x438;&#x438; &#x432; &#x43F;&#x430;&#x43C;&#x44F;&#x442;&#x438; BFF [Container storage] Access token + &#x437;&#x430;&#x448;&#x438;&#x444;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x439; refresh token, TTL 1 &#x447;&#x430;&#x441;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="profiles" value="&#x411;&#x414; &#x43F;&#x440;&#x43E;&#x444;&#x438;&#x43B;&#x435;&#x439; [Container: PostgreSQL] &#x417;&#x430;&#x43F;&#x438;&#x441;&#x44C; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x441;&#x43E;&#x433;&#x43B;&#x430;&#x441;&#x438;&#x44F; &#x420;&#x435;&#x433;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x440;&#x430;&#x437;&#x43C;&#x435;&#x449;&#x435;&#x43D;&#x438;&#x435;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="750" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="api" value="API &#x43E;&#x442;&#x447;&#x451;&#x442;&#x43E;&#x432; [Container: Python] JWT audience + &#x440;&#x43E;&#x43B;&#x44C; + sub" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="750" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="region" value="&#x41F;&#x43E;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x442;&#x44C; &#x43A;&#x43E;&#x43D;&#x442;&#x443;&#x440; &#x434;&#x43B;&#x44F; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x44B; N &#x421;&#x432;&#x43E;&#x439; issuer, LDAP, &#x411;&#x414; &#x438; S3 &#x41D;&#x435; &#x43F;&#x435;&#x440;&#x435;&#x434;&#x430;&#x432;&#x430;&#x442;&#x44C; &#x41F;&#x414;&#x43D; &#x438; &#x43C;&#x435;&#x434;&#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x432; &#x43E;&#x431;&#x449;&#x438;&#x439; &#x433;&#x43B;&#x43E;&#x431;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; realm" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#f5f5f5;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="750" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="e0" value="&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="user" target="ui">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="Cookie HttpOnly + Secure" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="ui" target="auth">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="&#x420;&#x43E;&#x442;&#x430;&#x446;&#x438;&#x44F; sid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="auth" target="sess">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="Code + verifier; refresh" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="auth" target="kc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="LDAPS / &#x440;&#x43E;&#x43B;&#x438;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="kc" target="ldap">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="OAuth2 broker" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="kc" target="idp">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="Access token &#x43F;&#x43E; &#x432;&#x43D;&#x443;&#x442;&#x440;&#x435;&#x43D;&#x43D;&#x435;&#x439; &#x441;&#x435;&#x442;&#x438;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="auth" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="&#x41F;&#x440;&#x43E;&#x444;&#x438;&#x43B;&#x44C; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x441;&#x43E;&#x433;&#x43B;&#x430;&#x441;&#x438;&#x44F;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="auth" target="profiles">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="&#x41F;&#x440;&#x43E;&#x444;&#x438;&#x43B;&#x44C; /info &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x441;&#x43E;&#x433;&#x43B;&#x430;&#x441;&#x438;&#x44F;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="auth" target="idp">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="C4 &#x2014; &#x43E;&#x442;&#x447;&#x451;&#x442;&#x44B; &#x438; CDC">
+    <mxGraphModel grid="1" page="1" pageWidth="1800" pageHeight="1150">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="crm" value="CRM DB [Container: PostgreSQL] &#x41D;&#x430;&#x447;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; snapshot + WAL" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="cdc" value="Debezium / Kafka Connect [Container] LSN, create/update/delete" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="kafka" value="Kafka [Container] crm.public.prostheses" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="chraw" value="ClickHouse Kafka Engine + MV crm_ingest [Container: ClickHouse] ReplacingMergeTree &#x43F;&#x43E; LSN" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="70" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="&#x411;&#x430;&#x437;&#x430; &#x442;&#x435;&#x43B;&#x435;&#x43C;&#x435;&#x442;&#x440;&#x438;&#x438; [Container: PostgreSQL]" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="air" value="Airflow [Container: Python] &#x41A;&#x430;&#x436;&#x434;&#x44B;&#x435; 5 &#x43C;&#x438;&#x43D;&#x443;&#x442; ETL &#x2192; refresh &#x2192; manifest" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="420" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="mart" value="ClickHouse [Container] Refreshable MaterializedView CRM FINAL JOIN &#x442;&#x435;&#x43B;&#x435;&#x43C;&#x435;&#x442;&#x440;&#x438;&#x44F; &#x412;&#x435;&#x440;&#x441;&#x438;&#x438; &#x43E;&#x442;&#x447;&#x451;&#x442;&#x43D;&#x43E;&#x439; &#x432;&#x438;&#x442;&#x440;&#x438;&#x43D;&#x44B;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="420" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="&#x41F;&#x440;&#x438;&#x432;&#x430;&#x442;&#x43D;&#x44B;&#x439; S3 [Container: MinIO] manifest + &#x432;&#x435;&#x440;&#x441;&#x438;&#x438; &#x43E;&#x442;&#x447;&#x451;&#x442;&#x43E;&#x432;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="760" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="api" value="API &#x43E;&#x442;&#x447;&#x451;&#x442;&#x43E;&#x432; [Container: Python] &#x421;&#x43D;&#x430;&#x447;&#x430;&#x43B;&#x430; S3, &#x43F;&#x440;&#x438; &#x43F;&#x440;&#x43E;&#x43C;&#x430;&#x445;&#x435; OLAP &#x422;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; JWT sub &#x432;&#x43B;&#x430;&#x434;&#x435;&#x43B;&#x44C;&#x446;&#x430;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="760" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="nginx" value="Nginx / &#x44D;&#x43C;&#x443;&#x43B;&#x44F;&#x446;&#x438;&#x44F; CDN [Container] auth_request &#x434;&#x430;&#x436;&#x435; &#x43F;&#x440;&#x438; HIT &#x41A;&#x435;&#x448; &#x43F;&#x43E; URL &#x432;&#x435;&#x440;&#x441;&#x438;&#x438;" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="760" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="ui" value="&#x41F;&#x438;&#x43B;&#x43E;&#x442; / &#x438;&#x43D;&#x442;&#x435;&#x440;&#x444;&#x435;&#x439;&#x441; &#x427;&#x435;&#x440;&#x435;&#x437; bionicpro-auth Cookie, &#x43D;&#x435; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x44B; IdP" style="rounded=1;whiteSpace=wrap;html=0;fontSize=15;fillColor=#d5e8d4;strokeColor=#6c8ebf;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="760" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="e0" value="Snapshot / WAL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="crm" target="cdc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="&#x421;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x44F; JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="cdc" target="kafka">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="Consume" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="kafka" target="chraw">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="&#x422;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x435; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x435; CRM" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="chraw" target="mart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="SQL / &#x442;&#x435;&#x43B;&#x435;&#x43C;&#x435;&#x442;&#x440;&#x438;&#x44F;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="db" target="air">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="ETL, REFRESH + WAIT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="air" target="mart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="&#x41F;&#x443;&#x431;&#x43B;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x44F; &#x433;&#x43E;&#x442;&#x43E;&#x432;&#x43E;&#x433;&#x43E; manifest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="air" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="SELECT &#x433;&#x43E;&#x442;&#x43E;&#x432;&#x43E;&#x439; &#x432;&#x435;&#x440;&#x441;&#x438;&#x438;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="api" target="mart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x430; &#x438; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x44C; JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="api" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="&#x421;&#x43A;&#x430;&#x447;&#x430;&#x442;&#x44C; /cdn/&#x2026;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="ui" target="nginx">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="&#x410;&#x432;&#x442;&#x43E;&#x440;&#x438;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x439; origin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="nginx" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="&#x424;&#x430;&#x439;&#x43B; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438; &#x441;&#x435;&#x441;&#x441;&#x438;&#x438;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;fontSize=13;labelBackgroundColor=#ffffff;endArrow=block;" edge="1" parent="1" source="nginx" target="ui">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

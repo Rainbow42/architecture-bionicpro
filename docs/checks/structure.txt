@@ -1,0 +1,2 @@
+PASS: JSON, YAML and all three draw.io pages are structurally valid
+PASS: local .env values are absent from tracked and candidate project files

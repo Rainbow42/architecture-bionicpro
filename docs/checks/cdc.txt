@@ -1,0 +1,3 @@
+PASS: CRM INSERT -> Debezium -> Kafka -> ClickHouse
+PASS: CRM UPDATE replaces old state
+PASS: CRM DELETE preserved as tombstone

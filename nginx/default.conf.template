@@ -1,0 +1,58 @@
+proxy_cache_path /var/cache/nginx/reports levels=1:2 keys_zone=reports:10m max_size=128m inactive=1h;
+resolver ${NGINX_LOCAL_RESOLVERS} valid=10s ipv6=off;
+upstream idp { zone idp 64k; server keycloak:8080 resolve; }
+upstream auth_service { zone auth_service 64k; server bionicpro-auth:8000 resolve; }
+upstream report_service { zone report_service 64k; server bionicpro-api:8001 resolve; }
+upstream web_app { zone web_app 64k; server frontend:3000 resolve; }
+
+server {
+    listen 8080;
+    server_name localhost;
+    access_log off;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy no-referrer always;
+
+    location / {
+        proxy_pass http://web_app;
+    }
+
+    location ~ ^/(realms|resources)/ {
+        proxy_pass http://idp;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Host $http_host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Port 8088;
+    }
+
+    location ~ ^/(auth|api)/ {
+        proxy_pass http://auth_service;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Original-URI "";
+    }
+
+    location = /_authorize {
+        internal;
+        proxy_pass http://auth_service/auth/download;
+        proxy_pass_request_body off;
+        proxy_set_header Content-Length "";
+        proxy_set_header X-Original-URI $request_uri;
+    }
+
+    location /cdn/ {
+        auth_request /_authorize;
+        auth_request_set $session_cookie $upstream_http_set_cookie;
+        proxy_pass http://report_service/objects/;
+        proxy_set_header X-Origin-Key ${ORIGIN_KEY};
+        proxy_set_header Cookie "";
+        proxy_set_header Authorization "";
+        proxy_cache reports;
+        proxy_cache_key $uri;
+        proxy_cache_valid 200 5m;
+        proxy_cache_lock on;
+        proxy_hide_header Cache-Control;
+        add_header Cache-Control "private, no-store" always;
+        add_header Set-Cookie $session_cookie always;
+        add_header X-Cache $upstream_cache_status always;
+        add_header Content-Disposition 'attachment; filename="report.json"' always;
+    }
+}
