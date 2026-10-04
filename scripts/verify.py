@@ -35,4 +35,8 @@ for diagram in tree.findall('diagram'):
             if key in cell.attrib:
                 assert cell.attrib[key] in ids
 print('PASS: JSON, YAML and all three draw.io pages are structurally valid')
+for name in ('existing', 'authentication', 'reporting'):
+    svg = ET.parse(root / 'docs' / f'{name}.svg')
+    assert svg.getroot().tag == '{http://www.w3.org/2000/svg}svg', name
+print('PASS: all three SVG previews are valid XML')
 print('PASS: local .env values are absent from tracked and candidate project files')

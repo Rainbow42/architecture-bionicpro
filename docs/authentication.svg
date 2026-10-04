@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1220" viewBox="0 0 1720 1220"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#56646f"/></marker></defs><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial,sans-serif;fill:#243643} .title{font-size:24px;font-weight:bold} .label{font-size:14px} .node{font-size:16px}</style><text x="30" y="36" class="title">C4 — вход в региональном контуре</text>
+<rect x="40" y="120" width="300" height="150" rx="0" fill="#e8edf2" stroke="#42566a" stroke-width="1.5"/>
+<text x="190" y="200" text-anchor="middle" class="node"><tspan x="190" dy="0">Пилот протеза [Person]</tspan></text>
+<rect x="400" y="120" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="550" y="189" text-anchor="middle" class="node"><tspan x="550" dy="0">Интерфейс отчётов [Container:</tspan><tspan x="550" dy="22">React] Нет токенов IdP</tspan></text>
+<rect x="800" y="120" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="950" y="178" text-anchor="middle" class="node"><tspan x="950" dy="0">bionicpro-auth [Container: Python]</tspan><tspan x="950" dy="22">PKCE S256, state, nonce Сессии и</tspan><tspan x="950" dy="22">CSRF</tspan></text>
+<rect x="800" y="460" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="950" y="518" text-anchor="middle" class="node"><tspan x="950" dy="0">Региональный Keycloak [Container]</tspan><tspan x="950" dy="22">Access token 120 секунд</tspan><tspan x="950" dy="22">Обязательный OTP</tspan></text>
+<rect x="1200" y="460" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="1350" y="518" text-anchor="middle" class="node"><tspan x="1350" dy="0">Локальный каталог [External:</tspan><tspan x="1350" dy="22">OpenLDAP] Пользователи и роли Той</tspan><tspan x="1350" dy="22">же страны</tspan></text>
+<rect x="400" y="460" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="550" y="529" text-anchor="middle" class="node"><tspan x="550" dy="0">Разрешённый местный IdP [External]</tspan><tspan x="550" dy="22">Яндекс ID для РФ</tspan></text>
+<rect x="1200" y="120" width="300" height="150" rx="8" fill="#f3f1e9" stroke="#756842" stroke-width="1.5"/>
+<path d="M1200 135 Q1350 155 1500 135" fill="none" stroke="#756842"/>
+<text x="1350" y="167" text-anchor="middle" class="node"><tspan x="1350" dy="0">Сессии в памяти BFF [Container</tspan><tspan x="1350" dy="22">storage] Access token +</tspan><tspan x="1350" dy="22">зашифрованный refresh token, TTL 1</tspan><tspan x="1350" dy="22">час</tspan></text>
+<rect x="400" y="800" width="300" height="150" rx="8" fill="#f3f1e9" stroke="#756842" stroke-width="1.5"/>
+<path d="M400 815 Q550 835 700 815" fill="none" stroke="#756842"/>
+<text x="550" y="858" text-anchor="middle" class="node"><tspan x="550" dy="0">БД профилей [Container:</tspan><tspan x="550" dy="22">PostgreSQL] Запись после согласия</tspan><tspan x="550" dy="22">Региональное размещение</tspan></text>
+<rect x="800" y="800" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="950" y="869" text-anchor="middle" class="node"><tspan x="950" dy="0">API отчётов [Container: Python]</tspan><tspan x="950" dy="22">JWT audience + роль + sub</tspan></text>
+<rect x="40" y="800" width="300" height="210" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="190" y="877" text-anchor="middle" class="node"><tspan x="190" dy="0">Повторить контур для страны N Свой</tspan><tspan x="190" dy="22">issuer, LDAP, БД и S3 Не</tspan><tspan x="190" dy="22">передавать ПДн и медданные в общий</tspan><tspan x="190" dy="22">глобальный realm</tspan></text>
+<polyline points="340,195 400,195" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="327" y="156" width="86" height="22" fill="white"/><text x="370" y="171" text-anchor="middle" class="label"><tspan x="370" dy="0">Использует</tspan></text>
+<polyline points="700,195 800,195" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="695.6" y="150" width="108.8" height="40" fill="white"/><text x="750" y="165" text-anchor="middle" class="label"><tspan x="750" dy="0">HttpOnly</tspan><tspan x="750" dy="18">Secure cookie</tspan></text>
+<polyline points="1100,195 1200,195" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1103.2" y="156" width="93.6" height="22" fill="white"/><text x="1150" y="171" text-anchor="middle" class="label"><tspan x="1150" dy="0">Ротация sid</tspan></text>
+<polyline points="950,270 950,460" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1028" y="355" width="124" height="40" fill="white"/><text x="1090" y="370" text-anchor="middle" class="label"><tspan x="1090" dy="0">Code + verifier</tspan><tspan x="1090" dy="18">refresh</tspan></text>
+<polyline points="1100,535 1200,535" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1099.4" y="496" width="101.19999999999999" height="22" fill="white"/><text x="1150" y="511" text-anchor="middle" class="label"><tspan x="1150" dy="0">LDAPS / роли</tspan></text>
+<polyline points="800,535 700,535" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="695.6" y="496" width="108.8" height="22" fill="white"/><text x="750" y="511" text-anchor="middle" class="label"><tspan x="750" dy="0">OAuth2 broker</tspan></text>
+<polyline points="1100,240 1140,240 1140,865 1100,865" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1078" y="675" width="124" height="40" fill="white"/><text x="1140" y="690" text-anchor="middle" class="label"><tspan x="1140" dy="0">Access token</tspan><tspan x="1140" dy="18">внутренняя сеть</tspan></text>
+<polyline points="800,220 760,220 760,875 700,875" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="631.8" y="695" width="116.39999999999999" height="40" fill="white"/><text x="690" y="710" text-anchor="middle" class="label"><tspan x="690" dy="0">Профиль</tspan><tspan x="690" dy="18">после согласия</tspan></text>
+<polyline points="800,240 735,240 735,525 700,525" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="631.8" y="360" width="116.39999999999999" height="40" fill="white"/><text x="690" y="375" text-anchor="middle" class="label"><tspan x="690" dy="0">Профиль /info</tspan><tspan x="690" dy="18">после согласия</tspan></text>
+<text x="30" y="1190" class="label">Показан целевой региональный контур. Учебный стенд — один регион; публичный production требует TLS и отказоустойчивого session store.</text>
+</svg>

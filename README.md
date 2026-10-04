@@ -34,6 +34,8 @@ docker compose up --build -d
 
 Исходный `keycloak/realm-export.json` — файл шаблона курса; стенд его не использует.
 
+Просмотр схем без редактора: [существующий контур](docs/existing.svg), [вход](docs/authentication.svg), [отчёты и CDC](docs/reporting.svg).
+
 ## Проверки
 
 ```sh
