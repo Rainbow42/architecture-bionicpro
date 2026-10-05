@@ -1,0 +1,8 @@
+PASS: живая сессия prothetic1; API отчётов HTTP 200
+PASS: собственный отчёт HTTP 200; CDN MISS; строк: 6
+PASS: тот же URL HTTP 200; CDN HIT; содержимое совпало; Cache-Control private, no-store
+PASS: существующий отчёт prothetic2 недоступен — HTTP 403
+PASS: выход из приложения — HTTP 200
+PASS: ранее скачанный URL после выхода недоступен — HTTP 401
+PASS: API отчётов после выхода — HTTP 401
+ИТОГ: все проверки пройдены. Сессия завершена.
