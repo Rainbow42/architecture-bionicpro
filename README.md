@@ -42,14 +42,15 @@ docker compose up --build -d
 
 ```sh
 python3 -m venv .venv
-.venv/bin/pip install -r backend/requirements.txt pytest
-.venv/bin/pytest -q
+.venv/bin/pip install -r requirements-dev.txt
+.venv/bin/python scripts/verify.py
+.venv/bin/python scripts/keycloak.py check
 cd frontend
 npm ci
 npm run build
 npm audit
 ```
 
-Модульные тесты проверяют PKCE, шифрование refresh token, ротацию и срок сессии, обновление access token, CSRF, запрет чужих отчётов, неподготовленный период и отсутствие обращения в ClickHouse при попадании в S3. Эти тесты не заменяют проверку живого Keycloak, LDAP, MFA, CDC и Яндекс ID.
+`scripts/verify.py` проверяет структуру конфигураций и схем, а также отсутствие локальных секретов в файлах проекта. Для `scripts/keycloak.py check` нужен запущенный стенд: команда проверяет scope `basic`, LDAP-роли и обязательность OTP.
 
-Результаты стенда — в `docs/checks`. Оставшиеся шаги с аккаунтом — в [docs/manual-checks.md](docs/manual-checks.md).
+Результаты стенда — в `docs/checks`. Повторение проверок с аккаунтом — в [docs/manual-checks.md](docs/manual-checks.md).
