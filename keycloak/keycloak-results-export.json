@@ -756,6 +756,7 @@
         "web-origins",
         "roles",
         "profile",
+        "basic",
         "email"
       ],
       "optionalClientScopes": []

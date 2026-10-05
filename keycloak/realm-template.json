@@ -32,7 +32,7 @@
      "standardFlowEnabled": true, "directAccessGrantsEnabled": false,
      "implicitFlowEnabled": false, "serviceAccountsEnabled": false,
      "redirectUris": ["http://localhost:8088/auth/callback"], "webOrigins": [],
-     "defaultClientScopes": ["web-origins", "profile", "email", "roles"],
+     "defaultClientScopes": ["basic", "web-origins", "profile", "email", "roles"],
      "attributes": {"pkce.code.challenge.method": "S256", "use.refresh.tokens": "true"},
      "protocolMappers": [
        {"name": "reports-audience", "protocol": "openid-connect", "protocolMapper": "oidc-audience-mapper",

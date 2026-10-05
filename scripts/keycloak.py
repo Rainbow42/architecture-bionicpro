@@ -27,7 +27,18 @@ def execute(args, data=None):
 
 execute(['sh', '-c', '/opt/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080 '
          '--realm master --user admin --password "$KC_BOOTSTRAP_ADMIN_PASSWORD"'])
-if len(sys.argv) > 1 and sys.argv[1] == 'yandex':
+if len(sys.argv) > 1 and sys.argv[1] == 'configure':
+    clients = json.loads(execute(['/opt/keycloak/bin/kcadm.sh', 'get', 'clients', '-r', 'reports-realm',
+                                 '-q', 'clientId=bionicpro-auth', '--fields', 'id,clientId']))
+    client = next(client for client in clients if client['clientId'] == 'bionicpro-auth')
+    scopes = json.loads(execute(['/opt/keycloak/bin/kcadm.sh', 'get', 'client-scopes', '-r', 'reports-realm']))
+    basic = next(scope for scope in scopes if scope['name'] == 'basic')
+    path = f"clients/{client['id']}/default-client-scopes"
+    execute(['/opt/keycloak/bin/kcadm.sh', 'update', f"{path}/{basic['id']}", '-r', 'reports-realm', '-n'])
+    assigned = json.loads(execute(['/opt/keycloak/bin/kcadm.sh', 'get', path, '-r', 'reports-realm']))
+    assert any(scope['name'] == 'basic' for scope in assigned)
+    print('PASS: basic scope is assigned to bionicpro-auth; user credentials and roles are unchanged')
+elif len(sys.argv) > 1 and sys.argv[1] == 'yandex':
     if not values.get('YANDEX_CLIENT_ID') or not values.get('YANDEX_CLIENT_SECRET'):
         raise SystemExit('Set YANDEX_CLIENT_ID and YANDEX_CLIENT_SECRET in local .env; do not share them')
     payload = json.loads(execute(['/opt/keycloak/bin/kcadm.sh', 'get', 'identity-provider/instances/yandex', '-r', 'reports-realm']))
@@ -59,6 +70,13 @@ elif len(sys.argv) > 1 and sys.argv[1] == 'export':
     (root / 'keycloak/keycloak-results-export.json').write_text(output)
     print('Exported live realm; user credentials and local secrets are excluded')
 elif len(sys.argv) > 1 and sys.argv[1] == 'check':
+    clients = json.loads(execute(['/opt/keycloak/bin/kcadm.sh', 'get', 'clients', '-r', 'reports-realm',
+                                 '-q', 'clientId=bionicpro-auth', '--fields', 'id,clientId']))
+    client = next(client for client in clients if client['clientId'] == 'bionicpro-auth')
+    scopes = json.loads(execute(['/opt/keycloak/bin/kcadm.sh', 'get',
+                                f"clients/{client['id']}/default-client-scopes", '-r', 'reports-realm']))
+    assert any(scope['name'] == 'basic' for scope in scopes), 'Run scripts/keycloak.py configure'
+    print('PASS: basic scope supplies the required subject claim')
     for username, can_report in [('john.doe', True), ('jane.smith', False)]:
         users = json.loads(execute(['/opt/keycloak/bin/kcadm.sh', 'get', 'users', '-r', 'reports-realm',
                                     '-q', 'username=' + username, '--fields', 'id,username']))
@@ -72,4 +90,4 @@ elif len(sys.argv) > 1 and sys.argv[1] == 'check':
     assert any(item.get('providerId') == 'auth-otp-form' and item['requirement'] == 'REQUIRED' for item in executions)
     print('PASS: OTP is REQUIRED in live password flow')
 else:
-    raise SystemExit('Usage: python scripts/keycloak.py export|yandex|check')
+    raise SystemExit('Usage: python scripts/keycloak.py configure|export|yandex|check')
