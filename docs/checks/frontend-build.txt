@@ -1,0 +1,14 @@
+
+> reports-frontend@0.1.0 build
+> tsc --noEmit && vite build --outDir build
+
+vite v8.3.2 building client environment for production...
+transforming...
+✓ 16 modules transformed.
+rendering chunks...
+computing gzip size...
+build/index.html                   0.40 kB │ gzip:  0.29 kB
+build/assets/index-C2tUcMih.css    1.05 kB │ gzip:  0.59 kB
+build/assets/index-DOBgW8y6.js   144.50 kB │ gzip: 47.43 kB
+
+✓ built in 92ms

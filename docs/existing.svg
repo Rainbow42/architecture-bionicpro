@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1220" viewBox="0 0 1720 1220"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#56646f"/></marker></defs><rect width="100%" height="100%" fill="white"/><style>text{font-family:Arial,sans-serif;fill:#243643} .title{font-size:24px;font-weight:bold} .label{font-size:14px} .node{font-size:16px}</style><text x="30" y="36" class="title">C4 — существующий контур</text>
+<rect x="40" y="90" width="300" height="150" rx="0" fill="#e8edf2" stroke="#42566a" stroke-width="1.5"/>
+<text x="190" y="170" text-anchor="middle" class="node"><tspan x="190" dy="0">Покупатель протеза [Person]</tspan></text>
+<rect x="400" y="90" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="550" y="159" text-anchor="middle" class="node"><tspan x="550" dy="0">Интернет-магазин [Container:</tspan><tspan x="550" dy="22">Битрикс24]</tspan></text>
+<rect x="800" y="90" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="950" y="170" text-anchor="middle" class="node"><tspan x="950" dy="0">CRM [Container: Битрикс24]</tspan></text>
+<rect x="1200" y="90" width="300" height="150" rx="0" fill="#e8edf2" stroke="#42566a" stroke-width="1.5"/>
+<text x="1350" y="170" text-anchor="middle" class="node"><tspan x="1350" dy="0">Оператор производства [Person]</tspan></text>
+<rect x="40" y="430" width="300" height="150" rx="0" fill="#e8edf2" stroke="#42566a" stroke-width="1.5"/>
+<text x="190" y="510" text-anchor="middle" class="node"><tspan x="190" dy="0">Пилот протеза [Person]</tspan></text>
+<rect x="400" y="430" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="550" y="488" text-anchor="middle" class="node"><tspan x="550" dy="0">Программа чипа [Software system:</tspan><tspan x="550" dy="22">C++] Миосигналы → движение Контур</tspan><tspan x="550" dy="22">реакции до 100 мс</tspan></text>
+<rect x="800" y="430" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="950" y="510" text-anchor="middle" class="node"><tspan x="950" dy="0">API [Container] Приём телеметрии</tspan></text>
+<rect x="1200" y="430" width="300" height="150" rx="8" fill="#f3f1e9" stroke="#756842" stroke-width="1.5"/>
+<path d="M1200 445 Q1350 465 1500 445" fill="none" stroke="#756842"/>
+<text x="1350" y="499" text-anchor="middle" class="node"><tspan x="1350" dy="0">База телеметрии [Container:</tspan><tspan x="1350" dy="22">PostgreSQL]</tspan></text>
+<rect x="40" y="780" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="190" y="849" text-anchor="middle" class="node"><tspan x="190" dy="0">Донастройка протеза [Container:</tspan><tspan x="190" dy="22">Android/iOS] Отчёты → новый BFF</tspan></text>
+<rect x="800" y="780" width="300" height="150" rx="0" fill="#e8edf2" stroke="#42566a" stroke-width="1.5"/>
+<text x="950" y="860" text-anchor="middle" class="node"><tspan x="950" dy="0">ML-инженер [Person]</tspan></text>
+<rect x="1200" y="780" width="300" height="150" rx="8" fill="#edf4fa" stroke="#3f6a87" stroke-width="1.5"/>
+<text x="1350" y="860" text-anchor="middle" class="node"><tspan x="1350" dy="0">CLI [Container] Обучение моделей</tspan></text>
+<rect x="800" y="270" width="300" height="120" rx="8" fill="#f3f1e9" stroke="#756842" stroke-width="1.5"/>
+<path d="M800 285 Q950 305 1100 285" fill="none" stroke="#756842"/>
+<text x="950" y="324" text-anchor="middle" class="node"><tspan x="950" dy="0">CRM DB [Container: PostgreSQL в</tspan><tspan x="950" dy="22">учебном стенде]</tspan></text>
+<polyline points="340,165 400,165" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="311.8" y="126" width="116.39999999999999" height="22" fill="white"/><text x="370" y="141" text-anchor="middle" class="label"><tspan x="370" dy="0">Заказ и оплата</tspan></text>
+<polyline points="700,165 800,165" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="726" y="126" width="48" height="22" fill="white"/><text x="750" y="141" text-anchor="middle" class="label"><tspan x="750" dy="0">Заказ</tspan></text>
+<polyline points="1200,165 1100,165" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1099.4" y="126" width="101.19999999999999" height="22" fill="white"/><text x="1150" y="141" text-anchor="middle" class="label"><tspan x="1150" dy="0">Производство</tspan></text>
+<polyline points="950,240 950,270" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1043.6" y="240" width="32.8" height="22" fill="white"/><text x="1060" y="255" text-anchor="middle" class="label"><tspan x="1060" dy="0">SQL</tspan></text>
+<polyline points="340,505 400,505" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="327" y="466" width="86" height="22" fill="white"/><text x="370" y="481" text-anchor="middle" class="label"><tspan x="370" dy="0">Миосигналы</tspan></text>
+<polyline points="190,580 190,780" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="260.8" y="665" width="78.39999999999999" height="22" fill="white"/><text x="300" y="680" text-anchor="middle" class="label"><tspan x="300" dy="0">Настройка</tspan></text>
+<polyline points="340,855 550,855 550,580" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="418.4" y="820" width="63.199999999999996" height="22" fill="white"/><text x="450" y="835" text-anchor="middle" class="label"><tspan x="450" dy="0">Команды</tspan></text>
+<polyline points="700,505 800,505" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="688" y="466" width="124" height="22" fill="white"/><text x="750" y="481" text-anchor="middle" class="label"><tspan x="750" dy="0">4G / телеметрия</tspan></text>
+<polyline points="340,815 730,815 730,680 850,680 850,580" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="706" y="625" width="48" height="22" fill="white"/><text x="730" y="640" text-anchor="middle" class="label"><tspan x="730" dy="0">HTTPS</tspan></text>
+<polyline points="1100,505 1200,505" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1122.2" y="466" width="55.599999999999994" height="22" fill="white"/><text x="1150" y="481" text-anchor="middle" class="label"><tspan x="1150" dy="0">Запись</tspan></text>
+<polyline points="1100,855 1200,855" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1122.2" y="816" width="55.599999999999994" height="22" fill="white"/><text x="1150" y="831" text-anchor="middle" class="label"><tspan x="1150" dy="0">Запуск</tspan></text>
+<polyline points="1350,780 1350,580" fill="none" stroke="#56646f" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="1432.2" y="665" width="55.599999999999994" height="22" fill="white"/><text x="1460" y="680" text-anchor="middle" class="label"><tspan x="1460" dy="0">Чтение</tspan></text>
+<text x="30" y="1190" class="label">Операционные процессы из условия; PostgreSQL CRM в стенде — учебный источник для CDC.</text>
+</svg>

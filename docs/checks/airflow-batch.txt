@@ -1,0 +1,45 @@
+[2026-10-04T18:37:34.685+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags
+[2026-10-04T18:37:34.730+0000] {dag.py:4435} INFO - dagrun id: reports_batch
+[2026-10-04T18:37:34.737+0000] {dag.py:4451} INFO - created dagrun <DagRun reports_batch @ 2026-10-04 18:37:34.685533+00:00: manual__2026-10-04T18:37:34.685533+00:00, state:running, queued_at: None. externally triggered: False>
+[2026-10-04T18:37:34.747+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=load_telemetry map_index=-1
+[2026-10-04T18:37:34.747+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: reports_batch.load_telemetry manual__2026-10-04T18:37:34.685533+00:00 [scheduled]>
+[2026-10-04 18:37:34,850] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='load_telemetry' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.850+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='load_telemetry' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.851+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-10-04 18:37:34,865] {python.py:240} INFO - Done. Returned value was: None
+[2026-10-04T18:37:34.865+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-10-04T18:37:34.867+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-10-04T18:37:34.867+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=reports_batch, task_id=load_telemetry, run_id=manual__2026-10-04T18:37:34.685533+00:00, execution_date=20261004T183734, start_date=, end_date=20261004T183734
+[2026-10-04T18:37:34.872+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=load_telemetry map_index=-1
+[2026-10-04T18:37:34.872+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=load_crm map_index=-1
+[2026-10-04T18:37:34.872+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: reports_batch.load_crm manual__2026-10-04T18:37:34.685533+00:00 [scheduled]>
+[2026-10-04 18:37:34,879] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='load_crm' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.879+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='load_crm' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.879+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-10-04 18:37:34,886] {python.py:240} INFO - Done. Returned value was: None
+[2026-10-04T18:37:34.886+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-10-04T18:37:34.887+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-10-04T18:37:34.888+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=reports_batch, task_id=load_crm, run_id=manual__2026-10-04T18:37:34.685533+00:00, execution_date=20261004T183734, start_date=, end_date=20261004T183734
+[2026-10-04T18:37:34.890+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=load_crm map_index=-1
+[2026-10-04T18:37:34.897+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=materialize map_index=-1
+[2026-10-04T18:37:34.897+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: reports_batch.materialize manual__2026-10-04T18:37:34.685533+00:00 [scheduled]>
+[2026-10-04 18:37:34,904] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='materialize' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.904+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='materialize' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.904+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-10-04 18:37:34,912] {python.py:240} INFO - Done. Returned value was: {'generation': 1791139054, 'table': 'reports_batch'}
+[2026-10-04T18:37:34.912+0000] {python.py:240} INFO - Done. Returned value was: {'generation': 1791139054, 'table': 'reports_batch'}
+[2026-10-04T18:37:34.916+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-10-04T18:37:34.916+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=reports_batch, task_id=materialize, run_id=manual__2026-10-04T18:37:34.685533+00:00, execution_date=20261004T183734, start_date=, end_date=20261004T183734
+[2026-10-04T18:37:34.919+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=materialize map_index=-1
+[2026-10-04T18:37:34.922+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=publish map_index=-1
+[2026-10-04T18:37:34.922+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: reports_batch.publish manual__2026-10-04T18:37:34.685533+00:00 [scheduled]>
+[2026-10-04 18:37:34,928] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='publish' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.928+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='reports_batch' AIRFLOW_CTX_TASK_ID='publish' AIRFLOW_CTX_EXECUTION_DATE='2026-10-04T18:37:34.685533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-04T18:37:34.685533+00:00'
+[2026-10-04T18:37:34.929+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-10-04 18:37:35,012] {python.py:240} INFO - Done. Returned value was: None
+[2026-10-04T18:37:35.012+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-10-04T18:37:35.014+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-10-04T18:37:35.014+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=reports_batch, task_id=publish, run_id=manual__2026-10-04T18:37:34.685533+00:00, execution_date=20261004T183734, start_date=, end_date=20261004T183735
+[2026-10-04T18:37:35.017+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=publish map_index=-1
+[2026-10-04T18:37:35.018+0000] {dagrun.py:854} INFO - Marking run <DagRun reports_batch @ 2026-10-04 18:37:34.685533+00:00: manual__2026-10-04T18:37:34.685533+00:00, state:running, queued_at: None. externally triggered: False> successful
+[2026-10-04T18:37:35.018+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=reports_batch, execution_date=2026-10-04 18:37:34.685533+00:00, run_id=manual__2026-10-04T18:37:34.685533+00:00, run_start_date=2026-10-04 18:37:34.685533+00:00, run_end_date=2026-10-04 18:37:35.018786+00:00, run_duration=0.333253, state=success, external_trigger=False, run_type=manual, data_interval_start=2026-10-04 18:30:00+00:00, data_interval_end=2026-10-04 18:35:00+00:00, dag_hash=None

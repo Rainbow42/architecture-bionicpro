@@ -1,42 +1,178 @@
-version: '3.8'
+name: bionicpro9
+
+x-app-env: &app-env
+  PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8088}
+  OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET:?Run scripts/init.py}
+  SESSION_KEY: ${SESSION_KEY:?Run scripts/init.py}
+  ORIGIN_KEY: ${ORIGIN_KEY:?Run scripts/init.py}
+  PROFILE_DSN: postgresql://demo:${POSTGRES_PASSWORD}@postgres/profiles
+  CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+  S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+  S3_SECRET_KEY: ${S3_SECRET_KEY}
 
 services:
-  keycloak_db:
-    image: postgres:14
+  postgres:
+    image: docker.io/library/postgres:17.5
     environment:
-      POSTGRES_DB: keycloak_db
-      POSTGRES_USER: keycloak_user
-      POSTGRES_PASSWORD: keycloak_password
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    command: [postgres, -c, wal_level=logical, -c, max_replication_slots=10]
     volumes:
-      - ./postgres-keycloak-data:/var/lib/postgresql/data
-    ports:
-      - "5433:5432"
+      - postgres:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U demo]
+      interval: 5s
+      retries: 30
+
   keycloak:
-    image: quay.io/keycloak/keycloak:21.1
+    image: quay.io/keycloak/keycloak:26.8.0
     environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${ADMIN_PASSWORD}
       KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://keycloak_db:5432/keycloak_db
-      KC_DB_USERNAME: keycloak_user
-      KC_DB_PASSWORD: keycloak_password
-    command: 
-      - start-dev
-      - --import-realm
-    volumes:
-      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
-    ports:
-      - "8080:8080"
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+      KC_DB_USERNAME: demo
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
+      KC_HOSTNAME: ${PUBLIC_URL:-http://localhost:8088}
+      KC_PROXY_HEADERS: xforwarded
+      KC_HTTP_ENABLED: 'true'
+      KC_HEALTH_ENABLED: 'true'
+      OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET}
+      DEMO_PASSWORD: ${DEMO_PASSWORD}
+      LDAP_PASSWORD: ${LDAP_PASSWORD}
+    command: [start-dev, --import-realm]
+    volumes: ['./keycloak/realm-template.json:/opt/keycloak/data/import/reports-realm-realm.json:ro']
     depends_on:
-      - keycloak_db
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
+      postgres: {condition: service_healthy}
+      ldap: {condition: service_started}
+
+  ldap:
+    image: docker.io/osixia/openldap:1.5.0
     environment:
-      REACT_APP_API_URL: http://localhost:8000
-      REACT_APP_KEYCLOAK_URL: http://localhost:8080
-      REACT_APP_KEYCLOAK_REALM: reports-realm
-      REACT_APP_KEYCLOAK_CLIENT_ID: reports-frontend
+      LDAP_ORGANISATION: BionicPRO
+      LDAP_DOMAIN: example.com
+      LDAP_ADMIN_PASSWORD: ${LDAP_PASSWORD}
+    command: [--copy-service]
+    volumes: ['./ldap/config.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/50-users.ldif:ro']
+
+  bionicpro-auth:
+    build: ./backend
+    environment: *app-env
+    depends_on: [keycloak]
+
+  bionicpro-api:
+    build: ./backend
+    environment: *app-env
+    command: [uvicorn, 'reports:app', --host, 0.0.0.0, --port, '8001', --no-access-log]
+    depends_on: [clickhouse, minio]
+
+  frontend:
+    build: ./frontend
+
+  nginx:
+    image: docker.io/library/nginx:1.28.0-alpine
+    environment:
+      ORIGIN_KEY: ${ORIGIN_KEY}
+      NGINX_ENTRYPOINT_LOCAL_RESOLVERS: '1'
+    volumes:
+      - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - cdn-cache:/var/cache/nginx/reports
+    ports: ['127.0.0.1:8088:8080']
+    depends_on: [frontend, bionicpro-auth, bionicpro-api, keycloak]
+
+  minio:
+    build: ./minio
+    command: [server, /data]
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_KEY}
+    volumes: [minio:/data]
+
+  minio-init:
+    build: ./backend
+    environment:
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+    command: [python, initialize_s3.py]
+    depends_on: [minio]
+
+  clickhouse:
+    image: docker.io/clickhouse/clickhouse-server:25.8
+    environment:
+      CLICKHOUSE_USER: reports
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: '1'
+    volumes:
+      - clickhouse:/var/lib/clickhouse
+      - ./clickhouse/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    depends_on: [kafka]
+
+  kafka:
+    image: docker.io/apache/kafka:3.9.1
+    environment:
+      KAFKA_NODE_ID: '1'
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: '1'
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: '1'
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: '1'
+      KAFKA_LOG_DIRS: /tmp/kraft-combined-logs
+    volumes: [kafka:/tmp/kraft-combined-logs]
+
+  kafka-connect:
+    image: quay.io/debezium/connect:3.2.0.Final
+    environment:
+      BOOTSTRAP_SERVERS: kafka:9092
+      GROUP_ID: bionicpro-connect
+      CONFIG_STORAGE_TOPIC: connect_configs
+      OFFSET_STORAGE_TOPIC: connect_offsets
+      STATUS_STORAGE_TOPIC: connect_status
+      CONFIG_STORAGE_REPLICATION_FACTOR: '1'
+      OFFSET_STORAGE_REPLICATION_FACTOR: '1'
+      STATUS_STORAGE_REPLICATION_FACTOR: '1'
+      CONNECT_CONFIG_PROVIDERS: env
+      CONNECT_CONFIG_PROVIDERS_ENV_CLASS: org.apache.kafka.common.config.provider.EnvVarConfigProvider
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on: [postgres, kafka]
+
+  connector-init:
+    build: ./backend
+    volumes: ['./debezium/connector.json:/connector.json:ro']
+    command: [python, initialize_connector.py]
+    depends_on: [kafka-connect]
+
+  airflow:
+    build: ./airflow
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://demo:${POSTGRES_PASSWORD}@postgres/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: 'false'
+      AIRFLOW__CORE__FERNET_KEY: ${SESSION_KEY}
+      AIRFLOW__WEBSERVER__SECRET_KEY: ${ORIGIN_KEY}
+      PIPELINE_MODE: ${PIPELINE_MODE:-cdc}
+      CRM_DSN: postgresql://demo:${POSTGRES_PASSWORD}@postgres/crm
+      TELEMETRY_DSN: postgresql://demo:${POSTGRES_PASSWORD}@postgres/telemetry
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+    command: standalone
+    volumes: ['./airflow/dags:/opt/airflow/dags:ro']
+    depends_on:
+      postgres: {condition: service_healthy}
+      clickhouse: {condition: service_started}
+      connector-init: {condition: service_completed_successfully}
+      minio-init: {condition: service_completed_successfully}
+
+volumes:
+  postgres:
+  minio:
+  clickhouse:
+  kafka:
+  cdn-cache:
